@@ -5,17 +5,14 @@ public class Main {
     public static boolean duplicate(int[] nums){
 
         int n = nums.length;
-       
-        Set<Integer> set = new HashSet<>();
+        Arrays.sort(nums);
 
-        for(int num: nums){
-          
-          if(set.contains(num)){
-            return true;
-          }
-          set.add(num);
 
+        for(int i = 1; i < n; i++){          //start with one 
+          if(nums[i] == nums[i - 1 ]) return true;
         }
+
+
         return false;
     }
  
