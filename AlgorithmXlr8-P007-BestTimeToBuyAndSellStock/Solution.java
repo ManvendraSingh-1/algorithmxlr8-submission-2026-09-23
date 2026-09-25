@@ -9,12 +9,8 @@ public class Main {
         int minPrice = Integer.MAX_VALUE;
 
         for(int price: nums){
-            if(minPrice < price){
-                profit = Math.max(profit, price - minPrice) ;
-            }
-            else{
-                minPrice = price;
-            }
+            minPrice = Math.min(minPrice, price);
+            profit = Math.max(profit, price - minPrice); 
         }
         return profit;
     }
